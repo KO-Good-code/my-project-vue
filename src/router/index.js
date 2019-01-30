@@ -1,29 +1,28 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import resume from '@/components/resume'
+import login from '@/components/login'
 import Blog from '@/components/blog'
+import home from '@/components/home'
 import dist from '@/components/404'
 
-Vue.use(Router);
+Vue.use(Router)
 
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'resume',
-      component: resume,
-      children:[
-        {
-          path:'Blog',
-          name:'Blog',
-          component:Blog
-        }
-      ]
+      name: 'home',
+      component: home,
+      children: [{
+        path: '/login',
+        name: 'login',
+        component: login
+      }]
     },
     {
-      path:'*',
-      name:'404',
-      component:dist
+      path: '*',
+      name: '404',
+      component: dist
     }
   ]
 })
