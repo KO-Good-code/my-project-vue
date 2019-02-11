@@ -7,3 +7,10 @@ html,body,.page{
   background: #324057;
   text-align: center;
 }
+.login-fade-enter-active, .login-fade-leave-active{
+  transition:all 1s;
+}
+.login-fade-enter, .login-fade-leave{
+  opacity: 0;
+  transform: scale(0) ;
+}

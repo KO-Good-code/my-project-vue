@@ -1,7 +1,6 @@
 <template>
   <div class="login_page">
-    <transition name="login-fade">
-      <section v-show="showLogin" class="form_contianer">
+      <section>
         <div>
           <p>后台管理登陆</p>
         </div>
@@ -17,7 +16,6 @@
           </el-form-item>
         </el-form>
       </section>
-    </transition>
   </div>
 </template>
 
@@ -26,7 +24,6 @@ export default {
   name: 'login',
   data () {
     return {
-      showLogin: false,
       loginForm: {
         username: '',
         password: ''
@@ -42,12 +39,9 @@ export default {
       }
     }
   },
-  mounted () {
-    this.showLogin = true
-  },
   methods: {
     async submitForm () {
-      this.$router.push('/home')
+      this.$router.push('/')
     }
   }
 }
@@ -56,9 +50,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .login_page{
-  background: #324057;
-}
-.form_contianer{
   width: 320px;
   height: 210px;
   padding: 25px;
@@ -74,12 +65,5 @@ export default {
 .submit_btn{
   width: 100%;
   font-size: 16px;
-}
-.login-fade-enter-active, .login-fade-leave-active{
-  transition:all 1s;
-}
-.login-fade-enter, .login-fade-leave{
-  opacity: 0;
-  transform: translate(0,-50px);
 }
 </style>
