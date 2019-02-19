@@ -41,7 +41,7 @@ export default {
   },
   methods: {
     async submitForm () {
-      this.$router.push('/')
+      this.$router.push('manage')
     }
   }
 }
