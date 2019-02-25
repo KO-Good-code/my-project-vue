@@ -37,7 +37,9 @@
       </el-col>
       <el-col :span="20" style="height: 100%;overflow: auto;padding: 0;background:#fff">
         <transition name="login-fade">
-          <router-view></router-view>
+          <keep-alive>
+            <router-view></router-view>
+          </keep-alive>
         </transition>
       </el-col>
     </el-row>

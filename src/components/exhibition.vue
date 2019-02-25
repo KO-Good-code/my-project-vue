@@ -29,10 +29,24 @@ export default {
           text: '走势图'
         },
         tooltip: {trigger: 'axis'},
-        legend: {},
+        legend: {
+            data:['新注册用户', '新增订单', '新增管理员']
+        },
+        toolbox: {
+          show: true,
+          feature: {
+            dataZoom: {
+              yAxisIndex: false
+            },
+            dataView: {readOnly: false},
+            magicType: {type: ['line', 'bar']},
+            restore: {}
+          }
+        },
         xAxis: {
           type: 'category',
-          boundaryGap: false
+          boundaryGap: false,
+          data: this.sevenDay
         },
         yAxis: [
           {
@@ -66,19 +80,11 @@ export default {
             }
           },
         ],
-        dataset: [
-          {
-            source: {
-              'product': this.sevenDay,
-              '新注册用户': this.sevenDate[0],
-              '新增订单': this.sevenDate[1],
-              '新增管理员': this.sevenDate[2]
-            }
-          }
-        ],
         series: [
           {
             type: 'line',
+            name: '新注册用户',
+            data: this.sevenDate[0],
             yAxisIndex: 1,
             markPoint: {
               data: [
@@ -90,6 +96,8 @@ export default {
           {
             type: 'line',
             yAxisIndex: 1,
+            name: '新增订单',
+            data: this.sevenDate[1],
             markPoint: {
               data: [
                 {type: 'max', name: '最大值'},
@@ -100,6 +108,8 @@ export default {
           {
             type: 'line',
             yAxisIndex: 1,
+            name: '新增管理员',
+            data: this.sevenDate[2],
             markPoint: {
               data: [
                 {type: 'max', name: '最大值'},
