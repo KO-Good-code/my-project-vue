@@ -36,6 +36,7 @@
         </el-menu>
       </el-col>
       <el-col :span="20" style="height: 100%;overflow: auto;padding: 0;background:#fff">
+        <head-top></head-top>
         <transition name="login-fade">
           <keep-alive>
             <router-view></router-view>
@@ -47,11 +48,15 @@
 </template>
 
 <script>
+import headTop from '../components/headTop'
 export default {
   computed: {
     defaultActive: function () {
       return this.$route.path.replace('/', '')
     }
+  },
+  components: {
+    headTop
   }
 }
 </script>
@@ -64,6 +69,7 @@ export default {
 .page_row{
   background: #545c64;
   color: white;
+  overflow: auto;
 }
 .el-menu{
   background: #409EEF;

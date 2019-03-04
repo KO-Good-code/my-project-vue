@@ -9,6 +9,7 @@ const dist = r => require.ensure([], () => r(require('@/page/404')), 'dist')
 const manage = r => require.ensure([], () => r(require('@/page/manage')), 'manage')
 const userList = r => require.ensure([], () => r(require('@/page/userList')), 'userList')
 const shopList = r => require.ensure([], () => r(require('@/page/shopList')), 'shopList')
+const foodList = r => require.ensure([], () => r(require('@/page/foodList')), 'foodList')
 
 export default new Router({
   routes: [
@@ -37,6 +38,11 @@ export default new Router({
           path: '/shopList',
           component: shopList,
           meta: ['数据管理', '商家列表']
+        },
+        {
+          path: '/foodList',
+          component: foodList,
+          meta: ['数据管理', '食品列表']
         }
       ]
     },

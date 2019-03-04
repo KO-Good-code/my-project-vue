@@ -1,6 +1,5 @@
 <template>
  <div>
-   <head-top></head-top>
    <section class="section_data">
      <header class="section_title">数据统计</header>
      <el-row :gutter="20" style="margin:0 0 20px 0">
@@ -21,7 +20,6 @@
 </template>
 
 <script>
-import headTop from '../components/headTop'
 import exhibition from '../components/exhibition'
 
 export default {
@@ -38,11 +36,10 @@ export default {
     }
   },
   components: {
-    headTop,
     exhibition
   },
   mounted () {
-
+    
   }
 }
 </script>
