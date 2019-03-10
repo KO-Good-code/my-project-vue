@@ -1,34 +1,31 @@
 <template>
  <el-card>
-     <el-table :data="tableData.slice((currentPage-1)*10,currentPage*10)">
+     <el-table v-loading="loading" :data="tableData.slice((currentPage-1)*10,currentPage*10)">
        <el-table-column type="selection" width="50"></el-table-column>
        <el-table-column type="expand">
          <template slot-scope="row">
            <el-form label-position="left" inline class="label-from">
-             <el-form-item label="商品名称">
+             <el-form-item label="店铺名称">
                <span>{{row.row.name}}</span>
              </el-form-item>
-             <el-form-item label="所属商店">
-               <span>{{row.row.shop}}</span>
+             <el-form-item label="用户名">
+               <span>{{row.row.address}}</span>
              </el-form-item>
-             <el-form-item label="商品 ID">
-               <span>{{row.row.id}}</span>
+             <el-form-item label="收货地址">
+               <span>{{row.row.desc}}</span>
              </el-form-item>
              <el-form-item label="店铺 ID">
                <span>{{row.row.shopid}}</span>
              </el-form-item>
-             <el-form-item label="店铺地址">
-               <span>{{row.row.address}}</span>
-             </el-form-item>
-             <el-form-item label="商品分类">
-               <span>{{row.row.category}}</span>
+             <el-form-item label="店铺名称">
+               <span>{{row.row.phone}}</span>
              </el-form-item>
            </el-form>
          </template>
        </el-table-column>
-       <el-table-column label="商品ID" prop="id"></el-table-column>
-       <el-table-column label="商品名称" prop="name"></el-table-column>
-       <el-table-column label="商品评分" prop="desc"></el-table-column>
+       <el-table-column label="订单ID" prop="name" width="250"></el-table-column>
+       <el-table-column label="总价格" prop="address" width="250"></el-table-column>
+       <el-table-column label="订单状态" prop="desc" width="250"></el-table-column>
        <el-table-column label="操作" fixed="right" width="300">
           <template slot-scope="scope">
             <el-button type="success" @click="ss(scope.row)" icon="el-icon-edit" size="mini" round plain>编辑</el-button>
@@ -47,7 +44,7 @@ export default {
       tableData: [
         {
           name: '好吃你就多吃点',
-          id: '001',
+          phone: '001',
           category: '江浙小吃、小吃零食',
           desc: '好吃你就多吃点',
           shopid: '001',
@@ -57,7 +54,8 @@ export default {
       ],
       currentPage: 1,
       index: 0,
-      list: 7
+      list: 7,
+      loading: false
     }
   },
   methods: {
@@ -73,7 +71,7 @@ export default {
   margin: 15px;
 }
 .label-from label{
-  width: 50%;
+  width: 20%;
   color: #99a9bf;
 }
 .label-from .el-form-item{

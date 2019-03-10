@@ -9,8 +9,8 @@
             <el-menu-item index="userList">用户列表</el-menu-item>
             <el-menu-item index="shopList">商家列表</el-menu-item>
             <el-menu-item index="foodList">食品列表</el-menu-item>
-            <el-menu-item index="orderList">订单列表</el-menu-item>
-            <el-menu-item index="adminList">管理员列表</el-menu-item>
+            <el-menu-item index="olderList">订单列表</el-menu-item>
+            <el-menu-item index="rootList">管理员列表</el-menu-item>
           </el-submenu>
           <el-submenu index="3">
             <template slot="title"><i class="el-icon-plus"></i>添加数据</template>
@@ -35,13 +35,15 @@
           <el-menu-item index="explain"><i class="el-icon-warning"></i>说明</el-menu-item>
         </el-menu>
       </el-col>
-      <el-col :span="20" style="height: 100%;overflow: auto;padding: 0;background:#fff">
+      <el-col :span="20" style="height: 100%;padding: 0;background:#fff">
         <head-top></head-top>
-        <transition name="login-fade">
+        <div style="height:90%;overflow:auto;">
+          <transition name="login-fade">
           <keep-alive>
             <router-view></router-view>
           </keep-alive>
         </transition>
+        </div>
       </el-col>
     </el-row>
   </div>

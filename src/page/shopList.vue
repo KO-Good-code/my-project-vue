@@ -32,10 +32,10 @@
            </el-form>
          </template>
        </el-table-column>
-       <el-table-column label="店铺名称" prop="name"></el-table-column>
-       <el-table-column label="店铺地址" prop="address"></el-table-column>
-       <el-table-column label="店铺介绍" prop="desc"></el-table-column>
-       <el-table-column label="操作" fixed="right">
+       <el-table-column label="店铺名称" prop="name" width="250"></el-table-column>
+       <el-table-column label="店铺地址" prop="address" width="250"></el-table-column>
+       <el-table-column label="店铺介绍" prop="desc" width="250"></el-table-column>
+       <el-table-column label="操作" fixed="right" width="300">
           <template slot-scope="scope">
             <el-button type="success" @click="ss(scope.row)" icon="el-icon-edit" size="mini" round plain>编辑</el-button>
             <el-button type="primary" icon="el-icon-plus" size="mini" round plain>添加食品</el-button>
@@ -78,8 +78,6 @@ export default {
 
 <style lang="less" scope>
 .el-card{
-  height: 70%;
-  width: 90%;
   margin: 15px;
 }
 .label-from label{
