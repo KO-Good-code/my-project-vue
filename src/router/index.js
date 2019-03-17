@@ -13,6 +13,7 @@ const foodList = r => require.ensure([], () => r(require('@/page/foodList')), 'f
 const olderList = r => require.ensure([], () => r(require('@/page/olderList')), 'olderList')
 const rootList = r => require.ensure([], () => r(require('@/page/rootList')), 'rootList')
 const addShop = r => require.ensure([], () => r(require('@/page/addShop')), 'addShop')
+const addFood = r => require.ensure([], () => r(require('@/page/addFood')), 'addFood')
 
 export default new Router({
   routes: [
@@ -61,6 +62,11 @@ export default new Router({
           path: '/addShop',
           component: addShop,
           meta: ['添加数据', '添加商铺']
+        },
+        {
+          path: '/addFoods',
+          component: addFood,
+          meta: ['添加数据', '添加商品']
         }
       ]
     },

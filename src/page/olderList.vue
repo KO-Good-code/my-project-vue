@@ -1,5 +1,5 @@
 <template>
- <el-card>
+ <el-card class="textCenter">
      <el-table v-loading="loading" :data="tableData.slice((currentPage-1)*10,currentPage*10)">
        <el-table-column type="selection" width="50"></el-table-column>
        <el-table-column type="expand">

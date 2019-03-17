@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="textCenter">
     <el-card class="box-card">
       <div class="table">
         <el-table :data="userData.slice((currentPage-1)*10,currentPage*10)" border :default-sort = "{prop: 'time', order: 'descending'}">
