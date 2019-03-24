@@ -123,7 +123,7 @@ export default {
 }
 </script>
 
-<style lang="less" scope>
+<style lang="less" scoped>
 .el-card{
   margin: 15px;
 }

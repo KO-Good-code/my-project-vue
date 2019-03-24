@@ -1,8 +1,8 @@
 <template>
   <div class="page">
     <el-row class="canter" style="margin:0" :gutter="10" type="flex" justify="space-between">
-      <el-col :span="4" class="page_row">
-        <el-menu :default-active="defaultActive" theme="dark" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b" router>
+      <el-col :span="4" style="padding:0">
+        <el-menu :default-active="defaultActive" theme="dark" class="page_row" :unique-opened="true" text-color="#fff" router>
           <el-menu-item index="manage"><i class="el-icon-menu"></i>首页</el-menu-item>
           <el-submenu index="2">
             <template slot="title"><i class="el-icon-document"></i>数据管理</template>
@@ -20,28 +20,26 @@
           <el-submenu index="4">
             <template slot="title"><i class="el-icon-star-on"></i>图表</template>
             <el-menu-item index="visitor">用户分布</el-menu-item>
-            <el-menu-item index="newMember">用户数据</el-menu-item>
+            <!-- <el-menu-item index="newMember">用户数据</el-menu-item> -->
           </el-submenu>
-          <el-submenu index="5">
+          <!-- <el-submenu index="5">
             <template slot="title"><i class="el-icon-edit"></i>编辑</template>
             <el-menu-item index="upImg">上传图片</el-menu-item>
             <el-menu-item index="txtVim">文本编辑</el-menu-item>
-          </el-submenu>
+          </el-submenu> -->
           <el-submenu index="6">
             <template slot="title"><i class="el-icon-setting"></i>设置</template>
             <el-menu-item index="adminSet">管理员设置</el-menu-item>
-            <el-menu-item index="sendMessage">发送通知</el-menu-item>
+            <!-- <el-menu-item index="sendMessage">发送通知</el-menu-item> -->
           </el-submenu>
-          <el-menu-item index="explain"><i class="el-icon-warning"></i>说明</el-menu-item>
+          <el-menu-item index="explian"><i class="el-icon-warning"></i>说明</el-menu-item>
         </el-menu>
       </el-col>
       <el-col :span="20" style="height: 100%;padding: 0;background:#fff">
         <head-top></head-top>
         <div style="height:90%;overflow:auto;">
           <transition name="login-fade">
-          <keep-alive>
             <router-view></router-view>
-          </keep-alive>
         </transition>
         </div>
       </el-col>
@@ -63,22 +61,26 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
 .view-page{
   margin-top: 40px;
   height: 75%;
 }
+.el-menu{
+  border: none;
+}
+.el-submenu .el-menu{
+  background-color: #263041;
+}
 .page_row{
-  background: #545c64;
-  color: white;
+  background: #324057;
   overflow: auto;
 }
-.el-menu{
-  background: #409EEF;
-  border: none;
-  color: white;
-}
-.el-menu-item{
+
+.el-menu-item,.el-submenu__title{
   min-width: 100px;
+  &:hover{
+    background: #353d4e
+  }
 }
 </style>

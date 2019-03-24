@@ -14,11 +14,14 @@ const olderList = r => require.ensure([], () => r(require('@/page/olderList')), 
 const rootList = r => require.ensure([], () => r(require('@/page/rootList')), 'rootList')
 const addShop = r => require.ensure([], () => r(require('@/page/addShop')), 'addShop')
 const addFood = r => require.ensure([], () => r(require('@/page/addFood')), 'addFood')
+const visitor = r => require.ensure([], () => r(require('@/page/visitor')), 'visitor')
+const adminSet = r => require.ensure([], () => r(require('@/page/adminSet')), 'adminSet')
+const explian = r => require.ensure([], () => r(require('@/page/explian')), 'explian')
 
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '',
       name: 'login',
       component: login
     },
@@ -67,6 +70,21 @@ export default new Router({
           path: '/addFoods',
           component: addFood,
           meta: ['添加数据', '添加商品']
+        },
+        {
+          path: '/visitor',
+          component: visitor,
+          meta: ['图表', '用户分布']
+        },
+        {
+          path: '/adminSet',
+          component: adminSet,
+          meta: ['设置', '管理员设置']
+        },
+        {
+          path: '/explian',
+          component: explian,
+          meta: ['说明']
         }
       ]
     },

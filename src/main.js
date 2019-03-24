@@ -8,7 +8,7 @@ import App from './App'
 import router from './router'
 import axios from 'axios'
 
-axios.defaults.baseURL = 'localhost:8080'
+// axios.defaults.baseURL = 'localhost:8080'
 axios.defaults.headers['Content-Type'] = 'application/json'
 Vue.prototype.$http = axios
 
