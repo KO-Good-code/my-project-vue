@@ -20,6 +20,7 @@
 </template>
 
 <script>
+import { getAdminInfo } from '../api/getData.js'
 export default {
   name: 'login',
   data () {
@@ -41,7 +42,11 @@ export default {
   },
   methods: {
     async submitForm () {
-      this.$router.push('manage')
+      await getAdminInfo()
+        .then(res => {
+          console.log(res)
+        })
+      // this.$router.push('manage')
     }
   }
 }

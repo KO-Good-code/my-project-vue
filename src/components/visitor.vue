@@ -26,11 +26,11 @@ export default {
     }
   },
   mounted() {
-    this.$http.get('../../static/china.json').then( res => {
-      echarts.registerMap('china', res.data)
-      this.myChart = echarts.init(this.$refs.visitorpie)
-      this.initData()
-    })
+    // this.$http.get('../../static/china.json').then( res => {
+    //   echarts.registerMap('china', res.data)
+    //   this.myChart = echarts.init(this.$refs.visitorpie)
+    //   this.initData()
+    // })
     
   },
   methods: {
