@@ -25,6 +25,7 @@ export default {
       if (command === 'home') {
         this.$router.push('/manage')
       } else if (command === 'signOut') {
+        localStorage.clear()
         this.$router.push('/')
       }
     }

@@ -6,7 +6,7 @@ axios.defaults.headers['Content-Type'] = 'application/json'
 axios.interceptors.request.use(confing => {
   let token = localStorage.getItem('token')
   if (token) {
-    confing.headers.common['Authorization'] = token
+    confing.headers.Authorization = `Bearer ` + token
   }
   return confing
 }, error => Promise.reject(error))
@@ -24,4 +24,9 @@ export const getAdminInfo = (headers = {}) => {
 // 获取地图信息
 export const getChinaMap = (headers = {}) => {
   return axios.get(`/china.json`, headers)
+}
+
+// 获取管理员信息
+export const getAdminData = (headers = {}) => {
+  return axios.get(`/admindata`, headers)
 }

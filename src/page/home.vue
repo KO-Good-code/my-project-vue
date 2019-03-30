@@ -21,6 +21,7 @@
 
 <script>
 import exhibition from '../components/exhibition'
+import { getAdminData } from '../api/getData.js'
 
 export default {
   data () {
@@ -39,7 +40,9 @@ export default {
     exhibition
   },
   mounted () {
-    
+    getAdminData().then(res => {
+      console.log(res.data)
+    })
   }
 }
 </script>
