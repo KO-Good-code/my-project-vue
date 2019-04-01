@@ -33,7 +33,7 @@ export default {
       allOrder: 963,
       allMin: 789,
       sevenDay: ['2014-7-1', '2015-7-1', '2016-7-1'],
-      sevenDate: [[114,22,33], [27,33,25], [83,55,95]]
+      sevenDate: [[114,22,33], [27,33,25], [83,55,95]],
     }
   },
   components: {
