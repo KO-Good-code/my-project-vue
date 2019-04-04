@@ -21,6 +21,7 @@
 
 <script>
 import { getAdminInfo, login } from '../api/getData.js'
+import { mapMutations } from 'vuex'
 export default {
   name: 'login',
   data () {
@@ -47,11 +48,13 @@ export default {
       })
   },
   methods: {
+    ...mapMutations(['insert']),
     async submitForm (name) {
       this.$refs[name].validate(async (vaild) => {
         if(vaild){
           login(this.loginForm).then( res => {
             if(res.data.code === 1){
+              this.insert(res.data.level)
               this.$message({
                 type:'success',
                 message: res.data.message

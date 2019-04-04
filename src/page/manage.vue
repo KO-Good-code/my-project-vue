@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <el-row class="canter" style="margin:0" :gutter="10" type="flex" justify="space-between">
-      <el-col :span="4" style="padding:0">
+      <el-col :span="4" style="padding:0;overflow:auto;">
         <el-menu :default-active="defaultActive" theme="dark" class="page_row" :unique-opened="true" text-color="#fff" router>
           <el-menu-item index="manage"><i class="el-icon-menu"></i>首页</el-menu-item>
           <el-submenu index="2">
@@ -35,9 +35,9 @@
           <el-menu-item index="explian"><i class="el-icon-warning"></i>说明</el-menu-item>
         </el-menu>
       </el-col>
-      <el-col :span="20" style="height: 100%;padding: 0;background:#fff">
+      <el-col :span="20" style="height: 100%;padding: 0;background:#fff;">
         <head-top></head-top>
-        <div style="height:90%;overflow:auto;">
+        <div style="overflow:auto;">
           <transition name="login-fade">
             <router-view></router-view>
         </transition>

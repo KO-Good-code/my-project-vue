@@ -13,11 +13,11 @@ import 'echarts/lib/component/legend'
 import 'echarts/lib/component/toolbox'
 import 'echarts/lib/component/markPoint'
 import 'echarts/lib/component/tooltip'
+import { setTimeout } from 'timers';
 
 export default {
   mounted () {
     this.myCharts = echarts.init(document.getElementById('line1'))
-    this.initDate()
   },
   props: ['sevenDate', 'sevenDay'],
   methods: {

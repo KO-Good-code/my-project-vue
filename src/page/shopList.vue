@@ -34,7 +34,7 @@
        </el-table-column>
        <el-table-column label="店铺名称" prop="name" width="250"></el-table-column>
        <el-table-column label="店铺地址" prop="address" width="250"></el-table-column>
-       <el-table-column label="店铺介绍" prop="desc" width="250"></el-table-column>
+       <el-table-column label="店铺介绍" prop="desc"></el-table-column>
        <el-table-column label="操作" fixed="right" width="300">
           <template slot-scope="scope">
             <el-button type="success" @click="ss(scope.row)" icon="el-icon-edit" size="mini" round plain>编辑</el-button>

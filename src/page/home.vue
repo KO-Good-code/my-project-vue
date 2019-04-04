@@ -15,7 +15,7 @@
        <el-col :span="4"><div class="data_list"><span class="data_num">{{allMin}}</span>管理员</div></el-col>
      </el-row>
    </section>
-   <exhibition :sevenDay="sevenDay" :sevenDate="sevenDate"></exhibition>
+   <exhibition ref="ex" :sevenDay="sevenDay" :sevenDate="sevenDate"></exhibition>
  </div>
 </template>
 
@@ -31,17 +31,29 @@ export default {
       adminCount: 456,
       allUser: 654,
       allOrder: 963,
-      allMin: 789,
-      sevenDay: ['2014-7-1', '2015-7-1', '2016-7-1'],
-      sevenDate: [[114,22,33], [27,33,25], [83,55,95]],
+      allMin: 0,
+      sevenDay: [],
+      sevenDate: [[],[],[]],
     }
   },
   components: {
     exhibition
   },
-  mounted () {
+  beforeCreate () {
     getAdminData().then(res => {
       console.log(res.data)
+      let len = res.data.length;
+      this.allMin = res.data[len-1].cum
+      this.adminCount = res.data[len-1].cum
+      for(let i = len-3;i<len;i++){
+        if(res.data[i]){
+          this.sevenDay.push(res.data[i].dat)
+          this.sevenDate[2].push(res.data[i].num)
+        }
+      }
+      this.$refs.ex.initDate()
+    }).catch(err => {
+      this.$router.push('')
     })
   }
 }
